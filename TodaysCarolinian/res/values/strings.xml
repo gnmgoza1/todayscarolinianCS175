@@ -8,12 +8,22 @@
     <!-- Login -->
     <string name="user">Username</string>
     <string name="pass">Password</string>
-    <string name="title_activity_frontpage">FrontPage</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_activity_frontpage">Front Page</string>
+
+    <!-- Navigation Drawer -->
+    <string name="title_section1">Section</string>
+    <string name="top_stories">Top Stories</string>
+    <string name="news">News</string>
+    <string name="features">Features</string>
+    <string name="opinion">Opinion</string>
+    <string name="notebook">Notebook</string>
+    <string name="sports">Sports</string>
+    <string name="title_section2">Saved Articles</string>
+    <string name="title_section3">Today\'s Carolinian</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
+    <string name="title_activity_article_page">ArticlePage</string>
+    <string name="title_activity_about_page">AboutPage</string>
 
 </resources>

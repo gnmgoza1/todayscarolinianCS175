@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -50,11 +51,37 @@ public class FrontpageActivity extends ActionBarActivity implements
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
 		// update the main content by replacing fragments
-		FragmentManager fragmentManager = getSupportFragmentManager();
-		fragmentManager
-				.beginTransaction()
-				.replace(R.id.container,
-						PlaceholderFragment.newInstance(position + 1)).commit();
+		// FragmentManager fragmentManager = getSupportFragmentManager();
+		// fragmentManager
+		// .beginTransaction()
+		// .replace(R.id.container,
+		// PlaceholderFragment.newInstance(position + 1)).commit();
+		switch (position) {
+		case 0: {
+			Intent intent = new Intent(FrontpageActivity.this, ArticlePage.class);
+			startActivity(intent);
+			break;
+		}
+		case 8: {
+			Intent intent = new Intent(FrontpageActivity.this, AboutPage.class);
+			startActivity(intent);
+			break;
+		}
+		case 1: {
+			// if this position is to add fragment
+			FragmentManager fragmentManager = getSupportFragmentManager();
+			fragmentManager
+					.beginTransaction()
+					.replace(R.id.container,
+							PlaceholderFragment.newInstance(position + 1))
+					.commit();
+			break;
+		}
+		default:
+			break;
+
+		}
+
 	}
 
 	public void onSectionAttached(int number) {

@@ -26,6 +26,14 @@
             android:name=".FrontpageActivity"
             android:label="@string/title_activity_frontpage" >
         </activity>
+        <activity
+            android:name=".ArticlePage"
+            android:label="@string/title_activity_article_page" >
+        </activity>
+        <activity
+            android:name=".AboutPage"
+            android:label="@string/title_activity_about_page" >
+        </activity>
     </application>
 
 </manifest>
