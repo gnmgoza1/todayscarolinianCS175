@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/aScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="12dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp" >
+
+        <TextView
+            android:id="@+id/aTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Rise for Education Alliance"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/writer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/by"
+            android:layout_below="@+id/aTitle"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/by"
+            android:text="ATHENA ORQUE, JET CENIA"
+            android:textColor="#8f2323"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:id="@+id/aImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/aTitle"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/article_image" />
+
+        <TextView
+            android:id="@+id/by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/aTitle"
+            android:layout_below="@+id/aTitle"
+            android:text="BY"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/articleDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/writer"
+            android:layout_alignRight="@+id/aTitle"
+            android:layout_below="@+id/aTitle"
+            android:text="JULY 6, 2014"
+            android:textColor="#8e8c8c"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/aText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/by"
+            android:layout_alignRight="@+id/articleDate"
+            android:layout_below="@+id/aImage"
+            android:layout_marginTop="25dp"
+            android:focusableInTouchMode="true"
+            android:scrollbars="vertical"
+            android:text="@string/article_text" />
+
+    </RelativeLayout>
+
+</ScrollView>
