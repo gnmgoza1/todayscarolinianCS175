@@ -17,20 +17,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:clickable="true"
         android:onClick="skip"
         android:src="@drawable/whitecircle_2" />
-
-    <TextView
-        android:id="@+id/tcBelowLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tcLogo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Today&apos;s CAROLINIAN"
-        android:textColor="#ffffff" />
 
     <ImageView
         android:id="@+id/loginBackground"
@@ -100,7 +90,8 @@
         android:layout_toLeftOf="@+id/skip"
         android:text="Sign In"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff" 
+        android:typeface="serif"/>
 
     <TextView
         android:id="@+id/signUp"
@@ -115,6 +106,23 @@
         android:onClick="signUp"
         android:text="Sign Up"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:typeface="serif" />
+
+    <TextView
+        android:id="@+id/tcBelowLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tcLogo"
+        android:layout_centerHorizontal="true"
+        android:text="TODAY\'S CAROLINIAN"
+        android:textColor="#ffffff"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"
+        android:textSize="30px"
+        android:textStyle="bold"
+        android:typeface="serif" />
 
 </RelativeLayout>

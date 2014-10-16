@@ -25,7 +25,7 @@
     <!-- BASE THEME -->
     <style name="TodaysTheme" parent="android:Theme.Holo.Light">
         <item name="android:actionBarStyle">@style/TodaysTheme.ActionBarStyle</item>
-        <item name="android:actionOverflowButtonStyle">@style/OverFlow</item>
+    <!--     <item name="android:actionOverflowButtonStyle">@style/OverFlow</item> -->
     </style>
 
     <style name="TodaysTheme.ActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
@@ -34,9 +34,9 @@
         <item name="android:background">#2d2b2c</item>
     </style>
 
-    <style name="OverFlow" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+    <!-- <style name="OverFlow" parent="@android:style/Widget.Holo.ActionButton.Overflow">
         <item name="android:src">@drawable/msg_todays</item>
-    </style>
+    </style> -->
 
     <style name="TodaysTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
         <item name="android:textColor">#ffffff</item>

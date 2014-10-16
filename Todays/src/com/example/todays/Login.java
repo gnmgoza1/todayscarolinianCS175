@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 public class Login extends Activity {
 
@@ -18,11 +17,13 @@ public class Login extends Activity {
 	}
 
 	public void signUp(View view) {
-
-		TextView signup = (TextView) findViewById(R.id.signUp1);
-		TextView signuptext = (TextView) findViewById(R.id.signUp2);
-		signup.setText("Sign Up");
-		signuptext.setText("A password will be e-mailed to you");
+		//
+		// TextView signup = (TextView) findViewById(R.id.signUp1);
+		// TextView signuptext = (TextView) findViewById(R.id.signUp2);
+		// signup.setText("Sign Up");
+		// signuptext.setText("A password will be e-mailed to you");
+		Intent dashboard = new Intent(this, SignUpActivity.class);
+		startActivity(dashboard);
 	}
 
 	public void skip(View view) {

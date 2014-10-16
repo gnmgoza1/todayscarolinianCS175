@@ -2,65 +2,163 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8f2323"
-    android:orientation="vertical"
-    android:paddingBottom="12dp"
-    android:paddingLeft="12dp"
-    android:paddingRight="12dp" >
+    android:background="#F9F6F4" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/todays_carolinian" />
 
     <TextView
-        android:id="@+id/staffStaff"
+        android:id="@+id/copyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="32dp"
-        android:layout_marginLeft="69dp"
-        android:clickable="true"
-        android:onClick="staff"
-        android:text="Staff"
-        android:textColor="#ffffff"
-        android:textSize="16dp" />
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="All content in this app is © 2014 Today&apos;s Carolinian"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#6E6568"
+        android:textSize="10sp" />
 
     <TextView
-        android:id="@+id/staffAboutUs"
+        android:id="@+id/about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/staffStaff"
-        android:layout_alignBottom="@+id/staffStaff"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="64dp"
-        android:clickable="true"
-        android:onClick="about"
-        android:text="About Us"
-        android:textColor="#ffffff"
-        android:textSize="16dp" />
+        android:layout_below="@+id/version"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="The Today&apos;s Carolinian (TC) is the official student publication of the University of San Carlos started since 1983."
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp"
+        android:text="TodaysCarolinian 1.0.0 "
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="12sp" />
 
     <ImageView
-        android:id="@+id/todaysLogo"
+        android:id="@+id/line"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/about"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/line" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/whitecircle_2" />
+        android:layout_marginTop="10dp"
+        android:text="Contact Us"
+        android:textStyle="bold" />
 
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@+id/todaysLogo"
-        android:layout_centerHorizontal="true" >
+    <ImageView
+        android:id="@+id/twitter"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/facebook"
+        android:layout_below="@+id/facebook"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:onClick="openTwitter"
+        android:src="@drawable/twitter" />
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:lines="12"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
-            android:text="@string/article_text"
-            android:textColor="#FFFFFF" />
-    </ScrollView>
+    <ImageView
+        android:id="@+id/askfm"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/twitter"
+        android:layout_below="@+id/twitter"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:onClick="openAskFM"
+        android:src="@drawable/askfm" />
+
+    <ImageView
+        android:id="@+id/gmail"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/askfm"
+        android:layout_below="@+id/askfm"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:onClick="eMailTodays"
+        android:src="@drawable/gmail" />
+
+    <TextView
+        android:id="@+id/facebookAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/twitter"
+        android:layout_alignTop="@+id/facebook"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/twitter"
+        android:gravity="center_vertical"
+        android:text="todayscarolinian"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/askfm"
+        android:layout_alignLeft="@+id/facebookAddress"
+        android:layout_alignTop="@+id/twitter"
+        android:gravity="center_vertical"
+        android:text="todaysusc"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/gmail"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_alignTop="@+id/askfm"
+        android:gravity="center_vertical"
+        android:text="AskTodays"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/gmail"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView3"
+        android:gravity="center_vertical"
+        android:text="todayscarolinianusc@gmail.com"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/facebook"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/textView1"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_toLeftOf="@+id/version"
+        android:clickable="true"
+        android:onClick="openFacebook"
+        android:src="@drawable/facebook" />
 
 </RelativeLayout>

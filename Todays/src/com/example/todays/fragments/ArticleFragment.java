@@ -13,19 +13,36 @@ public class ArticleFragment extends Fragment {
 	
 	public ArticleFragment(){}
 	
+	//
+	// @Override
+	// public View onCreateView(LayoutInflater inflater, ViewGroup container,
+	// Bundle savedInstanceState) {
+	//
+	// View rootView = inflater.inflate(R.layout.fragment_article, container,
+	// false);
+	// // TextView tv= tv.setMovementMethod(new ScrollingMovementMethod());
+	//
+	// return rootView;
+	// }
+	//
+	// public void test(View view){
+	//
+	// }
 	
-	@Override
-	 public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
- 
-        View rootView = inflater.inflate(R.layout.fragment_article, container, false);
-//       TextView tv= tv.setMovementMethod(new ScrollingMovementMethod()); 
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
 
-        return rootView;
-    }
-	
-	public void test(View view){
-		
+        View rootView = inflater.inflate(R.layout.fragment_article, container, false);
+//      TextView tv= tv.setMovementMethod(new ScrollingMovementMethod()); 
+
+       return rootView;
 	}
-	
+
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onActivityCreated(savedInstanceState);
+	}
+
 }

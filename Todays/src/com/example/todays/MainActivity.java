@@ -2,15 +2,16 @@ package com.example.todays;
 
 import java.util.ArrayList;
 
-import android.annotation.SuppressLint;
 import android.app.ActionBar;
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.Menu;
@@ -18,22 +19,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import com.example.chatbox.ChatActivity;
 import com.example.todays.adapter.NavDrawerListAdapter;
-import com.example.todays.fragments.AboutFragment;
 import com.example.todays.fragments.ArticleFragment;
 import com.example.todays.fragments.DashboardFragment;
 import com.example.todays.fragments.FeaturesFragment;
 import com.example.todays.fragments.NewsFragment;
 import com.example.todays.fragments.NotebookFragment;
 import com.example.todays.fragments.OpinionFragment;
+import com.example.todays.fragments.SavedArticlesFragment;
 import com.example.todays.fragments.SportsFragment;
-import com.example.todays.fragments.StaffFragment;
 import com.example.todays.model.NavDrawerItem;
 
-@SuppressLint("NewApi")
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
@@ -62,6 +61,7 @@ public class MainActivity extends Activity {
 		actionBar.setSubtitle("Our commitment. Your paper.");
 		// actionBar.setBackgroundDrawable(new
 		// ColorDrawable(Color.parseColor("#000000")));
+		actionBar.setIcon(R.drawable.ic_launcher);
 
 		mTitle = mDrawerTitle = getTitle();
 
@@ -101,6 +101,10 @@ public class MainActivity extends Activity {
 				.getResourceId(7, -1)));
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuIcons
 				.getResourceId(8, -1)));
+		navDrawerItems.add(new NavDrawerItem(navMenuTitles[9], navMenuIcons
+				.getResourceId(9, -1)));
+		navDrawerItems.add(new NavDrawerItem(navMenuTitles[10], navMenuIcons
+				.getResourceId(10, -1)));
 		// What's hot, We will add a counter here
 		// navDrawerItems.add(new NavDrawerItem(navMenuTitles[5],
 		// navMenuIcons.getResourceId(5, -1), true, "50+"));
@@ -142,7 +146,10 @@ public class MainActivity extends Activity {
 
 		if (savedInstanceState == null) {
 			// on first time display view for first nav item
-			displayView(0);
+			Fragment fragment = new DashboardFragment();
+			FragmentManager fragmentManager = getFragmentManager();
+			fragmentManager.beginTransaction()
+					.replace(R.id.frame_container, fragment).commit();
 		}
 	}
 
@@ -174,13 +181,10 @@ public class MainActivity extends Activity {
 
 		// Handle action bar actions click
 		switch (item.getItemId()) {
-		case R.id.action_settings:
-			return true;
-		case R.id.subitem1:
-			Toast.makeText(this, "Submenu Item 1", Toast.LENGTH_SHORT).show();
-			break;
-		case R.id.subitem2:
-			Toast.makeText(this, "Submenu Item 2", Toast.LENGTH_SHORT).show();
+		case R.id.action_message:
+			Intent intent = new Intent(this, ChatActivity.class);
+			startActivity(intent);
+
 			break;
 
 		default:
@@ -196,7 +200,7 @@ public class MainActivity extends Activity {
 	public boolean onPrepareOptionsMenu(Menu menu) {
 		// if nav drawer is opened, hide the action items
 		boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-		menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
+		menu.findItem(R.id.action_message).setVisible(!drawerOpen);
 		return super.onPrepareOptionsMenu(menu);
 	}
 
@@ -207,6 +211,7 @@ public class MainActivity extends Activity {
 		// update the main content by replacing fragments
 
 		Fragment fragment = null;
+		Intent intent = null;
 		switch (position) {
 		case 0:
 			// fragment = new HomeFragment();
@@ -214,6 +219,9 @@ public class MainActivity extends Activity {
 			fragment = new DashboardFragment();
 			break;
 		case 1:
+			// Intent aboutintent = new Intent(this,
+			// AboutAndStaffActivity.class);
+			// startActivity(aboutintent);
 			fragment = new NewsFragment();
 			break;
 		case 2:
@@ -229,33 +237,42 @@ public class MainActivity extends Activity {
 			fragment = new SportsFragment();
 			break;
 		case 6:
-			fragment = new DashboardFragment();
+			fragment = new SavedArticlesFragment();
 			break;
-		case 7:// TodaysCarolinian
-			fragment = new StaffFragment();
+		case 7:// SEARCH
+			intent = new Intent(this, SearchActivity.class);
+			startActivity(intent);
 			break;
-		case 8:// settings
-			fragment = new AboutFragment();
+		case 8:// TODAYS
+			Intent aboutintenty = new Intent(this, AboutAndStaffActivity.class);
+			startActivity(aboutintenty);
 			break;
-		case 9:// AboutFragment
-			fragment = new AboutFragment();
+		case 9:// SETTINGS
+			intent = new Intent(this, SettingsActivity.class);
+			startActivity(intent);
 			break;
-		case 10:// ArticleFragment
-			fragment = new ArticleFragment();
+		case 10:// LOGOUT
+			Intent logout = new Intent(getApplicationContext(), Login.class);
+			logout.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(logout);
 			break;
 		default:
 			break;
 		}
 
-		if (position >= 9) {
-			FragmentManager fragmentManager = getFragmentManager();
-			fragmentManager.beginTransaction()
-					.replace(R.id.frame_container, fragment).commit();
-		}
-		if (position < 9 && fragment != null) {
-			FragmentManager fragmentManager = getFragmentManager();
-			fragmentManager.beginTransaction()
-					.replace(R.id.frame_container, fragment).commit();
+		if (position < 9 && fragment != null
+				&& fragment != new ArticleFragment()) {
+			// FragmentManager fragmentManager = getFragmentManager();
+			// fragmentManager.beginTransaction()
+			// .replace(R.id.frame_container, fragment).commit();
+			FragmentTransaction transaction = getFragmentManager()
+					.beginTransaction();
+			// fragmentManager.popBackStack();
+			// fragmentManager.beginTransaction()
+			// .replace(R.id.frame_container, fragment).commit();
+			transaction.replace(R.id.frame_container, fragment);
+			transaction.addToBackStack(null);
+			transaction.commit();
 
 			// update selected item and title, then close the drawer
 			mDrawerList.setItemChecked(position, true);
@@ -268,20 +285,13 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	public void staff(View view) {
-		Fragment fragment = null;
-		FragmentManager fragmentManager = getFragmentManager();
-		fragmentManager.beginTransaction()
-				.replace(R.id.frame_container, fragment).commit();
-		fragment = new StaffFragment();
-	}
-
-	public void about(View view) {
-		Fragment fragment = null;
-		FragmentManager fragmentManager = getFragmentManager();
-		fragmentManager.beginTransaction()
-				.replace(R.id.frame_container, fragment).commit();
-		fragment = new AboutFragment();
+	@Override
+	public void onBackPressed() {
+		if (!mDrawerLayout.isDrawerOpen(mDrawerList)) {
+			mDrawerLayout.openDrawer(mDrawerList);
+		} else {
+			mDrawerLayout.closeDrawer(mDrawerList);
+		}
 	}
 
 	@Override
@@ -308,7 +318,5 @@ public class MainActivity extends Activity {
 		// Pass any configuration change to the drawer toggls
 		mDrawerToggle.onConfigurationChanged(newConfig);
 	}
-
-
 
 }

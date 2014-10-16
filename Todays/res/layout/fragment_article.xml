@@ -12,16 +12,6 @@
         android:paddingRight="12dp" >
 
         <TextView
-            android:id="@+id/aTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:text="Rise for Education Alliance"
-            android:textSize="22sp" />
-
-        <TextView
             android:id="@+id/writer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
+            android:scaleType="centerCrop"
             android:layout_below="@+id/aTitle"
             android:layout_marginTop="17dp"
             android:src="@drawable/article_image" />
@@ -67,13 +58,25 @@
             android:id="@+id/aText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/by"
-            android:layout_alignRight="@+id/articleDate"
+            android:layout_alignLeft="@+id/aImage"
+            android:layout_alignParentRight="true"
             android:layout_below="@+id/aImage"
             android:layout_marginTop="25dp"
             android:focusableInTouchMode="true"
             android:scrollbars="vertical"
             android:text="@string/article_text" />
+
+        <TextView
+            android:id="@+id/aTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="10dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="The Rise for Education Alliance"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 
