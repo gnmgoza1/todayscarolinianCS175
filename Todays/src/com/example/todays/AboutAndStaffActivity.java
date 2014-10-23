@@ -9,6 +9,8 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -73,30 +75,40 @@ public class AboutAndStaffActivity extends FragmentActivity implements
 	}
 
 	public void openFacebook(View view) {
-		Intent intent = new Intent(Intent.ACTION_VIEW);
-		Uri data = Uri.parse("https://www.facebook.com/todayscarolinian");
-		intent.setData(data);
-		startActivity(intent);
+
+		try {
+			Intent intent = new Intent(Intent.ACTION_VIEW,
+					Uri.parse("fb://profile/74907198813"));
+			startActivity(intent);
+		} catch (Exception e) {
+			startActivity(new Intent(Intent.ACTION_VIEW,
+					Uri.parse("http://www.facebook.com/todayscarolinian")));
+		}
+
 	}
-	
+
 	public void openTwitter(View view) {
-		Intent intent = new Intent(Intent.ACTION_VIEW);
-		Uri data = Uri.parse("https://www.twitter.com/todaysusc");
-		intent.setData(data);
-		startActivity(intent);
+		try {
+			Intent intent = new Intent(Intent.ACTION_VIEW,
+			    Uri.parse("twitter://user?user_id=513059569"));
+			startActivity(intent);
+
+			}catch (Exception e) {
+			    startActivity(new Intent(Intent.ACTION_VIEW,
+			         Uri.parse("https://twitter.com/#!/todaysusc"))); 
+			} 
 	}
-	
+
 	public void openAskFM(View view) {
 		Intent intent = new Intent(Intent.ACTION_VIEW);
 		Uri data = Uri.parse("https://ask.fm/TodaysCarolinian");
 		intent.setData(data);
 		startActivity(intent);
 	}
-	
 
 	public void eMailTodays(View view) {
 		Intent intent = new Intent(Intent.ACTION_VIEW);
-		Uri data = Uri.parse("mailto:?subject=todayscarolinianusc@gmail.com"
+		Uri data = Uri.parse("mailto:todayscarolinianusc@gmail.com?subject=Inquiries"
 				+ "&body=");
 		intent.setData(data);
 		startActivity(intent);

@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.example.todays.ArticleActivity;
 import com.example.todays.R;
 import com.example.todays.adapter.DashboardAdapter;
-import com.example.todays.adapter.News;
+import com.example.todays.model.News;
 
 public class OpinionFragment extends ListFragment {
 
@@ -31,7 +31,6 @@ public class OpinionFragment extends ListFragment {
 		super.onCreate(savedInstanceState);
 
 	}
-
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,7 +47,7 @@ public class OpinionFragment extends ListFragment {
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-	
+
 		ArrayList<News> items = News.populateItems();
 		DashboardAdapter adapter = new DashboardAdapter(getActivity(), items);
 		if (headerView != null)
@@ -58,49 +57,10 @@ public class OpinionFragment extends ListFragment {
 		super.onActivityCreated(savedInstanceState);
 	}
 
-	// @Override
-	// public void onStart() {
-	// // TODO Auto-generated method stub
-	// super.onStart();
-	// ArrayList<News> items = News.populateItems();
-	// DashboardAdapter adapter = new DashboardAdapter(getActivity(), items);
-	// if (DashboardFragment.counter == 0) {
-	// this.getListView().addHeaderView(headerView);
-	// }
-	// setListAdapter(adapter);
-	//
-	// }
-
-	// @Override
-	// public void onListItemClick(ListView l, View v, int position, long id) {
-	// // TODO Auto-generated method stub
-	// super.onListItemClick(l, v, position, id);
-	// Fragment fragment = new ArticleFragment();
-	// FragmentTransaction transaction = getFragmentManager()
-	// .beginTransaction();
-	// // fragmentManager.popBackStack();
-	// // fragmentManager.beginTransaction()
-	// // .replace(R.id.frame_container, fragment).commit();
-	// transaction.replace(R.id.frame_container, fragment);
-	// transaction.addToBackStack(null);
-	// transaction.commit();
-	// }
-
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
-//		
-//		 Fragment fragment = new ArticleFragment();
-//		 // FragmentManager fragmentManager = getFragmentManager();
-//		 FragmentTransaction transaction = getFragmentManager()
-//		 .beginTransaction();
-//		 // fragmentManager.popBackStack();
-//		 // fragmentManager.beginTransaction()
-//		 // .replace(R.id.frame_container, fragment).commit();
-//		 transaction.replace(R.id.frame_container, fragment);
-//		 transaction.addToBackStack(null);
-//		 transaction.commit();
 		Intent articleintent = new Intent(getActivity(), ArticleActivity.class);
 		startActivity(articleintent);
 	}

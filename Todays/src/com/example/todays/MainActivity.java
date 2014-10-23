@@ -59,8 +59,6 @@ public class MainActivity extends FragmentActivity {
 		ActionBar actionBar = getActionBar();
 		actionBar.setTitle("TODAY'S CAROLINIAN");
 		actionBar.setSubtitle("Our commitment. Your paper.");
-		// actionBar.setBackgroundDrawable(new
-		// ColorDrawable(Color.parseColor("#000000")));
 		actionBar.setIcon(R.drawable.ic_launcher);
 
 		mTitle = mDrawerTitle = getTitle();
@@ -78,19 +76,18 @@ public class MainActivity extends FragmentActivity {
 		navDrawerItems = new ArrayList<NavDrawerItem>();
 
 		// adding nav drawer items to array
-		// Home
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons
 				.getResourceId(0, -1)));
-		// Find People
+
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons
 				.getResourceId(1, -1)));
-		// Photos
+
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons
 				.getResourceId(2, -1)));
-		// Communities, Will add a counter here
+
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons
 				.getResourceId(3, -1)));
-		// Pages
+
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons
 				.getResourceId(4, -1)));
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons
@@ -105,11 +102,6 @@ public class MainActivity extends FragmentActivity {
 				.getResourceId(9, -1)));
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[10], navMenuIcons
 				.getResourceId(10, -1)));
-		// What's hot, We will add a counter here
-		// navDrawerItems.add(new NavDrawerItem(navMenuTitles[5],
-		// navMenuIcons.getResourceId(5, -1), true, "50+"));
-
-		// Recycle the typed array
 		navMenuIcons.recycle();
 
 		mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
@@ -214,14 +206,9 @@ public class MainActivity extends FragmentActivity {
 		Intent intent = null;
 		switch (position) {
 		case 0:
-			// fragment = new HomeFragment();
-			// break;
 			fragment = new DashboardFragment();
 			break;
 		case 1:
-			// Intent aboutintent = new Intent(this,
-			// AboutAndStaffActivity.class);
-			// startActivity(aboutintent);
 			fragment = new NewsFragment();
 			break;
 		case 2:
@@ -262,14 +249,8 @@ public class MainActivity extends FragmentActivity {
 
 		if (position < 9 && fragment != null
 				&& fragment != new ArticleFragment()) {
-			// FragmentManager fragmentManager = getFragmentManager();
-			// fragmentManager.beginTransaction()
-			// .replace(R.id.frame_container, fragment).commit();
 			FragmentTransaction transaction = getFragmentManager()
 					.beginTransaction();
-			// fragmentManager.popBackStack();
-			// fragmentManager.beginTransaction()
-			// .replace(R.id.frame_container, fragment).commit();
 			transaction.replace(R.id.frame_container, fragment);
 			transaction.addToBackStack(null);
 			transaction.commit();
@@ -300,22 +281,15 @@ public class MainActivity extends FragmentActivity {
 		getActionBar().setTitle(mTitle);
 	}
 
-	/**
-	 * When using the ActionBarDrawerToggle, you must call it during
-	 * onPostCreate() and onConfigurationChanged()...
-	 */
-
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
-		// Sync the toggle state after onRestoreInstanceState has occurred.
 		mDrawerToggle.syncState();
 	}
 
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
-		// Pass any configuration change to the drawer toggls
 		mDrawerToggle.onConfigurationChanged(newConfig);
 	}
 

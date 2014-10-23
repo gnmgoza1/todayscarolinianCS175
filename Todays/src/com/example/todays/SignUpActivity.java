@@ -16,13 +16,6 @@ public class SignUpActivity extends Activity {
 		setContentView(R.layout.activity_signup);
 	}
 
-//	public void signUp(View view) {
-//
-//		TextView signup = (TextView) findViewById(R.id.signUp1);
-//		TextView signuptext = (TextView) findViewById(R.id.signUp2);
-//		signup.setText("Sign Up");
-//		signuptext.setText("A password will be e-mailed to you");
-//	}
 
 	public void skip(View view) {
 		Intent dashboard = new Intent(this, MainActivity.class);

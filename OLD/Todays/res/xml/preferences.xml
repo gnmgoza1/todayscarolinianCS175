@@ -1,0 +1,26 @@
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="Account">
+            
+        <EditTextPreference
+                android:key="edittext_password"
+                android:title="Password"
+                android:summary="Allows you to change your password here"
+                android:dialogTitle="New Password:" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="Others">
+	
+        <CheckBoxPreference
+                android:key="checkbox_preference"
+                android:title="Notifications"
+                android:summary="Notifies when a new article(s) is published" />
+        
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

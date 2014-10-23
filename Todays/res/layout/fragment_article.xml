@@ -29,9 +29,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
-            android:scaleType="centerCrop"
             android:layout_below="@+id/aTitle"
             android:layout_marginTop="17dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/article_image" />
 
         <TextView
@@ -44,17 +44,6 @@
             android:textSize="9sp" />
 
         <TextView
-            android:id="@+id/articleDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/writer"
-            android:layout_alignRight="@+id/aTitle"
-            android:layout_below="@+id/aTitle"
-            android:text="JULY 6, 2014"
-            android:textColor="#8e8c8c"
-            android:textSize="9sp" />
-
-        <TextView
             android:id="@+id/aText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,21 +51,32 @@
             android:layout_alignParentRight="true"
             android:layout_below="@+id/aImage"
             android:layout_marginTop="25dp"
-            android:focusableInTouchMode="true"
             android:scrollbars="vertical"
-            android:text="@string/article_text" />
+            android:text="@string/article_text"
+            android:textIsSelectable="true" />
 
         <TextView
             android:id="@+id/aTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
             android:paddingTop="10dp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:text="The Rise for Education Alliance"
-            android:textSize="20sp" />
+            android:text="Youth Groups Organize Candle-lighting Activity to Support People’s Initiative"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/articleDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/writer"
+            android:layout_alignBottom="@+id/writer"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/writer"
+            android:text="Posted on JULY 6, 2014"
+            android:textColor="#8e8c8c"
+            android:textSize="9sp" />
 
     </RelativeLayout>
 

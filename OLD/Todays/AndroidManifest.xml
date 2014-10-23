@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.todays"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="20" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/whitecircle_2"
+        android:label="@string/app_name"
+        android:logo="@drawable/whitecircle_2"
+        android:theme="@style/TodaysTheme" >
+        <activity
+            android:name="com.example.todays.Login"
+            android:label="@string/title_activity_my_activity2" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.SEARCH" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SearchActivity" >
+
+            <!-- android:parentActivityName="com.example.todays.MainActivity" > -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.todays.MainActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name="com.example.todays.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.todays.ArticleActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.todays.AboutAndStaffActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.todays.SignUpActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.todays.SettingsActivity"
+            android:label="@string/app_name" >
+        </activity>
+          <activity
+            android:name="com.example.todays.SetPreferenceActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.chatbox.ChatActivity"
+            android:label="@string/app_name" >
+        </activity>
+    </application>
+
+</manifest>

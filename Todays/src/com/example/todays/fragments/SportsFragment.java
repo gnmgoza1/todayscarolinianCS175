@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.example.todays.ArticleActivity;
 import com.example.todays.R;
 import com.example.todays.adapter.DashboardAdapter;
-import com.example.todays.adapter.News;
+import com.example.todays.model.News;
 
 public class SportsFragment extends ListFragment {
 

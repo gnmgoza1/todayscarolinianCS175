@@ -1,0 +1,54 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent"
+   android:id="@+id/headerview">
+   
+   <ImageView 
+   android:src="@drawable/intrams"
+   android:scaleType="centerCrop"
+   android:layout_height="170dp"
+   android:alpha="0.8"
+   android:id="@+id/layoutImage"
+   android:layout_width="wrap_content"/>
+   
+   <RelativeLayout
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent">
+
+       <TextView
+           android:id="@+id/title"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="5dp"
+           android:layout_marginRight="5dp"
+           android:textSize="21px"
+           android:typeface="serif"
+           android:textStyle="bold"
+           android:textColor="#FFFFFF"
+           android:shadowColor="#000000"
+           android:shadowDx="1"
+           android:shadowDy="1"
+           android:shadowRadius="3"
+           android:text="In the Spirit of Comradeship: The Opening Program of USC Intramurals 2014"
+           android:textAppearance="?android:attr/textAppearanceLarge" />
+
+       <TextView
+           android:id="@+id/author"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignLeft="@+id/title"
+           android:layout_below="@+id/title"
+           android:layout_marginTop="90dp"
+           android:textColor="#FFFFFF"
+           android:textSize="15px"
+           android:textStyle="bold"
+           android:shadowColor="#000000"
+           android:shadowDx="2"
+           android:shadowDy="2"
+           android:shadowRadius="3"
+           android:typeface="monospace"
+           android:text="BY CESAR CARLOS HEYROSA" />
+       
+       </RelativeLayout>
+   
+</FrameLayout>

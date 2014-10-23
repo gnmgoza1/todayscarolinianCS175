@@ -9,7 +9,7 @@
     tools:context="com.example.signup.MainActivity" >
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/staffTodaysLogo"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_alignParentTop="true"
@@ -20,7 +20,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView1"
+        android:layout_below="@+id/staffTodaysLogo"
         android:layout_marginTop="15dp"
         android:text="WHO ARE YOU?"
         android:textStyle="bold" />

@@ -40,7 +40,7 @@
 
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
-    <string name="title_activity_my_activity2">TODAY\'S CAROLINIAN</string>
+    <string name="title_activity_login">TODAY\'S CAROLINIAN</string>
     <string name="action_websearch">Web search</string>
     <string name="search_hint">Find articles...</string>
     <string name="action_search">Search</string>

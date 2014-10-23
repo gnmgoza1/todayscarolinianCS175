@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/articleImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/sports" />
+ 
+    <TextView
+        android:id="@+id/articleTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/articleAuthor"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/articleImage"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center_vertical"
+        android:layout_toRightOf="@+id/articleImage"
+        android:text="The University of San Carlos (USC) Warriors defeated the Cebu Institute of Technology – University (CIT-U) Wildcats"
+        android:textSize="16px"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/articleAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/articleImage"
+        android:layout_alignLeft="@+id/articleTitle"
+        android:text="Gio Mendoza"
+        android:textSize="12px"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/pipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_below="@+id/articleTitle"
+        android:layout_toRightOf="@+id/articleAuthor"
+        android:textSize="12px"
+        android:text="|" />
+
+    <TextView
+        android:id="@+id/articleDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/pipe"
+        android:layout_alignBottom="@+id/pipe"
+        android:layout_marginLeft="3dp"
+        android:layout_toRightOf="@+id/pipe"
+        android:text="45 Minutes Ago"
+        android:textSize="12px" />
+
+</RelativeLayout>

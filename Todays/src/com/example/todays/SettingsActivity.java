@@ -1,5 +1,6 @@
 package com.example.todays;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
@@ -19,5 +20,7 @@ public class SettingsActivity extends PreferenceActivity {
 		super.onActivityResult(requestCode, resultCode, data);
 
 	}
+	
+	
 
 }

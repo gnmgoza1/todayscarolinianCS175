@@ -13,7 +13,7 @@ public class Login extends Activity {
 		super.onCreate(savedInstanceState);
 		ActionBar bar = getActionBar();
 		bar.hide();
-		setContentView(R.layout.activity_my_activity2);
+		setContentView(R.layout.activity_login);
 	}
 
 	public void signUp(View view) {

@@ -1,26 +1,17 @@
-<PreferenceScreen
-        xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <PreferenceCategory
-            android:title="Account">
-            
-        <EditTextPreference
-                android:key="edittext_password"
-                android:title="Password"
-                android:summary="Allows you to change your password here"
-                android:dialogTitle="New Password:" />
-
+    <PreferenceCategory android:title="Account" >
+        <com.example.todays.CustomDialogPreference
+            android:dialogTitle="Change Password"
+            android:summary="Allows you to change your password here"
+            android:title="Password" />
+ 
     </PreferenceCategory>
-
-    <PreferenceCategory
-            android:title="Others">
-	
+    <PreferenceCategory android:title="Others" >
         <CheckBoxPreference
-                android:key="checkbox_preference"
-                android:title="Notifications"
-                android:summary="Notifies when a new article(s) is published" />
-        
-
+            android:key="checkbox_preference"
+            android:summary="Notifies when a new article(s) is published"
+            android:title="Notifications" />
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.todays.R;
+import com.example.todays.model.News;
 
 public class DashboardAdapter extends ArrayAdapter<String> {
 	private final Context context;
