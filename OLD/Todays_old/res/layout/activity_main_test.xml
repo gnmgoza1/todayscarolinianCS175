@@ -1,0 +1,120 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.todays.MainActivity" >
+
+    <ImageView
+        android:id="@+id/todaysLogo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/background" />
+
+    <ImageView
+        android:id="@+id/tcLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:onClick="skip"
+        android:src="@drawable/whitecircle_2" />
+
+    <TextView
+        android:id="@+id/tcBelowLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tcLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Today&apos;s CAROLINIAN"
+        android:textColor="#ffffff" />
+
+    <ImageView
+        android:id="@+id/loginBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signUp2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/textinput" />
+
+    <TextView
+        android:id="@+id/signUp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/loginBackground"
+        android:layout_below="@+id/signUp1"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Password"
+        android:paddingTop="16dp" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/password"
+        android:layout_alignTop="@+id/loginBackground"
+        android:ems="10"
+        android:hint="Username"
+        android:paddingTop="16dp" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/signUp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/signUp2"
+        android:layout_below="@+id/tcBelowLogo"
+        android:textColor="#ffffff" />
+
+    <ImageView
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:clickable="true"
+        android:onClick="skip"
+        android:src="@drawable/skip" />
+
+    <TextView
+        android:id="@+id/signIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginBackground"
+        android:layout_marginRight="18dp"
+        android:layout_toLeftOf="@+id/skip"
+        android:text="Sign In"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/signUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/signIn"
+        android:layout_alignBottom="@+id/signIn"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="45dp"
+        android:layout_toRightOf="@+id/skip"
+        android:clickable="true"
+        android:onClick="signUp"
+        android:text="Sign Up"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>
